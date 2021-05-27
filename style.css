@@ -1,0 +1,218 @@
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/* Layout */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    background: white;
+    padding: 0 1.65rem 0.7rem 1.65rem;
+    margin-bottom: 5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.image {
+    background: url(images/bg-pattern-mobile.svg) no-repeat center;
+    background-position: calc(100% - 2rem) calc(100% - 0rem);
+    background-size: 13.125rem 6.25rem; 
+    display: flex;
+    justify-content: center;
+    height: 6rem;
+    width: 16.5rem;
+}
+
+.img-mobile { 
+    max-width: 15rem;
+    position: relative;
+    top: 5rem;
+    right: 0.938rem;
+}
+
+.img-desktop {
+    display: none;
+}
+
+.faq {
+    width: 100%;
+}
+
+  .accordion-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.accordion {
+    font-family: 'Kumbh Sans', sans-serif;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid hsl(240, 5%, 91%) 0.12rem;
+    cursor: pointer;
+}
+
+.accordion.bottom {
+    border: none;
+}
+
+.accordion-main {
+    position: relative;
+}
+
+  p {
+    font-family: 'Kumbh Sans';
+    font-weight: 400; 
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .arrowDown {
+    float: right;
+  }
+
+  .accordion.active > .arrowDown {
+    transform: rotate(180deg);
+  }
+
+  .accordion.active {
+      border-bottom: none;
+      font-weight: 700;
+      transition-duration: 0s;
+  }
+
+  .panel {
+    padding: 0 0 0 0;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    font-family: 'Kumbh Sans';
+    font-size: 12px;
+    border-bottom: 2px solid hsl(240, 5%, 91%);
+  }
+
+  div.panel.show {
+      display: block;
+  }
+
+.attribution { 
+    margin-top: 1rem;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+  @media screen and (min-width: 900px) {
+
+    h1 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 0.875rem;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+
+      .container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: auto;
+          min-height: 30rem;
+          padding: 0 5rem 0 0;
+      }
+
+      .image {
+        background: url(images/bg-pattern-desktop.svg) no-repeat;
+        min-height: inherit;
+        background-position: calc(100% - 3.4rem) calc(100% - -10rem);
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        width: auto;
+      }
+
+      .img-mobile {
+          display: none;
+      }
+
+      .img-desktop {
+        display: inline-block;
+        max-width: 50rem;
+    }
+
+    span {
+        overflow: hidden;
+    }
+
+    .img-desktop.main {
+        position: relative;
+        height: 20rem;
+        right: 3.5rem;
+    }
+
+    .img-desktop.box {
+        height: 11rem;
+        position: absolute;
+        left: -5.5rem;
+        bottom: 7rem;
+        animation: MoveUpDown 2.5s ease-in-out infinite;
+    }
+
+    .faq {
+        width: 20rem;
+        margin-right: 1rem;
+        height: 30rem;  
+        padding-top: 4rem;
+    }
+
+
+  }
+
+  @media screen and (min-width: 1024px) { 
+    .container {
+        width: 55rem;
+    }
+}
